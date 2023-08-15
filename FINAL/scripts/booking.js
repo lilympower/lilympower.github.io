@@ -6,10 +6,10 @@
 let cost = 0;
 let dailyRate = 35;
 let dayCounter = 0;
-let days = document.querySelectorAll('li.blue-hover')
+let days = document.querySelectorAll('li.blue-hover');
 let clearButton = document.getElementById('clear-button');
-let halfButton = document.getElementById('half')
-let fullButton = document.getElementById('full')
+let halfButton = document.getElementById('half');
+let fullButton = document.getElementById('full');
 
 
 /********* colour change days of week *********/
@@ -33,7 +33,7 @@ function colorChange(event){
 }
 
 for (let i = 0; i < days.length; i++) {
-    days[i].addEventListener("click", colorChange)
+    days[i].addEventListener("click", colorChange);
 }
 
 
@@ -43,20 +43,20 @@ for (let i = 0; i < days.length; i++) {
 
 function clear(){
     for (let i = 0; i < days.length; i++) {
-        days[i].classList.remove('clicked')
+        days[i].classList.remove('clicked');
     }
     dayCounter = 0;
     calculate();
 }
 
-clearButton.addEventListener('click', clear)
+clearButton.addEventListener('click', clear);
 
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 
 
 function half(){
-    dailyRate = 20
+    dailyRate = 20;
     if (!halfButton.classList.contains('clicked') && fullButton.classList.contains('clicked')){
         halfButton.classList.add('clicked');
         fullButton.classList.remove('clicked');
@@ -64,13 +64,13 @@ function half(){
     }
 }
 
-halfButton.addEventListener('click', half)
+halfButton.addEventListener('click', half);
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 
 
 function full(){
-    dailyRate = 35
+    dailyRate = 35;
     if (!fullButton.classList.contains('clicked') && halfButton.classList.contains('clicked')){
         fullButton.classList.add('clicked');
         halfButton.classList.remove('clicked');
@@ -78,7 +78,7 @@ function full(){
     }
 }
 
-fullButton.addEventListener('click', full)
+fullButton.addEventListener('click', full);
 
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
